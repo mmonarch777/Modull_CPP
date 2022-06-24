@@ -12,7 +12,7 @@ Fixed & Fixed::operator=(const Fixed & fixed)
 {
     if (this != &fixed)
     {
-        fixed_value = fixed.getRawBits();
+        this->fixed_value = fixed.getRawBits();
     }
     else
         std::cout << "Self-assignment is here" << std::endl;
@@ -56,31 +56,31 @@ std::ostream & operator<<(std::ostream & out, const Fixed & fixed)
 
 
 
-bool Fixed::operator!=(const Fixed & fixed)const
+bool Fixed::operator!=(const Fixed & fixed)
 {
     return fixed_value != fixed.fixed_value;
 }
-//bool Fixed::operator!=(Fixed const& lhs, Fixed const& rhs)const
-//{
-//    return !(lhs.fixed_value == rhs.fixed_value);
-//}
-bool Fixed::operator==(const Fixed & fixed)const
+//    bool Fixed::operator!=(Fixed const& lhs, Fixed const& rhs)
+//    {
+//        return !(lhs.fixed_value == rhs.fixed_value);
+//    }
+bool Fixed::operator==(const Fixed & fixed)
 {
     return fixed_value == fixed.fixed_value;
 }
-bool Fixed::operator>(const Fixed & fixed)const
+bool Fixed::operator>(const Fixed & fixed)
 {
     return fixed_value > fixed.fixed_value;
 }
-bool Fixed::operator<(const Fixed & fixed)const
+bool Fixed::operator<(const Fixed & fixed)
 {
     return fixed_value < fixed.fixed_value;
 }
-bool Fixed::operator>=(const Fixed & fixed)const
+bool Fixed::operator>=(const Fixed & fixed)
 {
     return fixed_value >= fixed.fixed_value;
 }
-bool Fixed::operator<=(const Fixed & fixed)const
+bool Fixed::operator<=(const Fixed & fixed)
 {
     return fixed_value <= fixed.fixed_value;
 }
@@ -138,25 +138,25 @@ Fixed Fixed::operator--(int )
 }
 Fixed & Fixed::min(Fixed & fix1, Fixed & fix2)
 {
-    if (fix1 > fix2)
+    if (fix1 >= fix2)
         return fix2;
     return fix1;
 }
 Fixed & Fixed::max(Fixed & fix1, Fixed & fix2)
 {
-    if (fix1 > fix2)
+    if (fix1 >= fix2)
         return fix1;
     return fix2;
 }
 const Fixed & Fixed::min(const Fixed & fix1, const Fixed & fix2)
 {
-    if (fix1 > fix2)
+    if ((Fixed&)fix1 >= (Fixed&)fix2)
         return fix2;
     return fix1;
 }
-const Fixed & Fixed::max(const Fixed &fix1, const Fixed &fix2)
+const Fixed & Fixed::max(const Fixed & fix1, const Fixed & fix2)
 {
-    if (fix1 > fix2)
+    if ((Fixed&)fix1 >= (Fixed&)fix2)
         return fix1;
     return fix2;
 }

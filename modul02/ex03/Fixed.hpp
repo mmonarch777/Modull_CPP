@@ -23,13 +23,13 @@ public:
     float toFloat(void ) const;
     int toInt(void ) const;
 //-----------------------------------------------
-    bool operator!=(const Fixed & fixed)const;
-//    bool operator!=(Fixed const& lhs, Fixed const& rhs)const;
-    bool operator==(const Fixed & fixed)const;
-    bool operator>(const Fixed & fixed) const;
-    bool operator<(const Fixed & fixed)const;
-    bool operator>=(const Fixed & fixed)const;
-    bool operator<=(const Fixed & fixed)const;
+    bool operator!=(const Fixed & fixed);
+//    bool operator!=(Fixed const& lhs, Fixed const& rhs);
+    bool operator==(const Fixed & fixed);
+    bool operator>(const Fixed & fixed);
+    bool operator<(const Fixed & fixed);
+    bool operator>=(const Fixed & fixed);
+    bool operator<=(const Fixed & fixed);
 
     Fixed operator+(const Fixed & fixed);
     Fixed operator-(const Fixed & fixed);
