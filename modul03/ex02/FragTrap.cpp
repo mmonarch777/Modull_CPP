@@ -36,6 +36,10 @@ FragTrap & FragTrap::operator=(const FragTrap & frag)
         std::cout << "FragTrap self-assignmet is here." << std::endl;
     return *this;
 }
+FragTrap::~FragTrap()
+{
+    std::cout << "FragTrap destructor is called." << std::endl;
+}
 void FragTrap::highFiveGuys(void )
 {
     if (hit_point > 0)
