@@ -19,10 +19,6 @@ DiamondTrap::DiamondTrap(std::string name): ClapTrap(std::string(name).append("_
     this->hit_point = FragTrap::get_hit_point();
     this->energy = ScavTrap::get_energyyy();
     this->damage = FragTrap::get_damage();
-    std::cout << this->get_NAME() << std::endl;
-    std::cout << this->get_hit_point() << std::endl;
-    std::cout << this->get_energe() << std::endl;
-    std::cout << this->get_damage() << std::endl;
     std::cout << "DiamondTrap constructor with parameters is called." << std::endl;
 }
 DiamondTrap::DiamondTrap(const DiamondTrap & other)
@@ -62,4 +58,8 @@ void DiamondTrap::whoAm(void )
 {
     if (hit_point > 0)
         std::cout << "I am DiamondTrap " << this->name << " and ClapTrap " << ClapTrap::get_name() << std::endl;
+}
+std::string DiamondTrap::get_NAME(void )
+{
+    return this->name;
 }

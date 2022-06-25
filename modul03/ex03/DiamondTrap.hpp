@@ -12,14 +12,11 @@ public:
     DiamondTrap();
     DiamondTrap(std::string name);
     DiamondTrap(const DiamondTrap & other);
-    DiamondTrap & operator=(const DiamondTrap & other);
     ~DiamondTrap();
+    DiamondTrap & operator=(const DiamondTrap & other);
 
     void attack(const std::string & target);
-    std::string get_NAME(void )
-    {
-        return this->name;
-    }
+    std::string get_NAME(void );
     void whoAm(void );
 
 };

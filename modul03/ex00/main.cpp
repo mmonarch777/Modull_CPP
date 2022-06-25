@@ -11,7 +11,7 @@ int main(void )
 
     mikle.attack(ejik.get_name());
     ejik.takeDamage(5);
-    ejik.beRepaired(2);
+    ejik.beRepaired(-429496729);
     std::cout << "-------------------------------------------" << std::endl;
     std::cout << ejik.get_hit_point() << std::endl;
     std::cout << ejik.get_energe() << std::endl;
