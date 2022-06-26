@@ -13,7 +13,7 @@ private:
 public:
 
     Cat();
-    Cat(std::string type);
+    Cat(std::string string);
     Cat(const Cat & other);
     ~Cat();
     Cat & operator=(const Cat & other);

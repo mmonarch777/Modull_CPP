@@ -4,6 +4,7 @@ SRC		=	main.cpp\
  			Animal.cpp\
  			Cat.cpp\
  			Dog.cpp\
+ 			Brain.cpp\
  			WrongAnimal.cpp\
  			WrongCat.cpp
 
@@ -12,6 +13,7 @@ OBJ		= $(SRC:.cpp=.o)
 HEADR	=	Animal.hpp\
 			Dog.hpp\
 			Cat.hpp\
+			Brain.hpp\
 			WrongAnimal.hpp\
 			WrongCat.hpp
 

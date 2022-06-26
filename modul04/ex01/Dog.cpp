@@ -1,29 +1,38 @@
 #include "Dog.hpp"
 
-Dog::Dog()
+
+Dog::Dog(): Animal("Dog")
 {
-    type = "Dog";
+    dogBrain = new Brain("DOG");
     std::cout << "Dog default constructor is called." << std::endl;
 }
-Dog::Dog(std::string type)
+Dog::Dog(std::string string): Animal("Dog")
 {
-    this->type = type;
+    dogBrain = new Brain(string);
     std::cout << "Dog constructor with params is called." << std::endl;
 }
 Dog::Dog(const Dog & other)
 {
-    *this = other;
+    type = other.type;
+    dogBrain = new Brain;
+    for (int i = 0; i < LEN; i++)
+        dogBrain[i] = other.dogBrain[i];
     std::cout << "Dog copy constructor is called." << std::endl;
 }
 Dog::~Dog()
 {
+    delete dogBrain;
     std::cout << "Dog destructor is colled." << std::endl;
 }
 Dog & Dog::operator=(const Dog & other)
 {
     if (this != &other)
     {
+        delete dogBrain;
         type = other.type;
+        dogBrain = new Brain;
+        for (int i = 0; i < LEN; i++)
+            dogBrain[i] = other.dogBrain[i];
         std::cout << "Dog assignment operator is called." << std::endl;
     }
     else
