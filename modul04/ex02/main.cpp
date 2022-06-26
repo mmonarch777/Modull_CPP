@@ -8,31 +8,43 @@
 int main()
 {
     std::cout << "------------------------------------------" << std::endl;
-    const Animal* meta = new Animal();
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
+    const Animal *j = new Dog();
+    const Animal *i = new Cat();
     std::cout << "------------------------------------------" << std::endl;
     std::cout << j->getType() << " " << std::endl;
     std::cout << i->getType() << " " << std::endl;
     i->makeSound(); //will output the cat sound!
     j->makeSound();
-    meta->makeSound();
     std::cout << "------------------------------------------" << std::endl;
     delete i;
     delete j;
-    delete meta;
     std::cout << "------------------------------------------" << std::endl;
     std::cout << "------------------------------------------" << std::endl;
     std::cout << "------------------------------------------" << std::endl;
-    int len = 10;
+    int len = 2;
+    if (len <= 0 || len > 1000)
+    {
+        std::cout << "You are seriously???" << std::endl;
+        return 0;
+    }
     const Animal *arrAnimal[len];
     for (int i = 0; i < len/2; i++)
         arrAnimal[i] = new Cat("mr");
     for (int i = len/2; i < len; i++)
         arrAnimal[i] = new Dog("gr");
     std::cout << "------------------------------------------" << std::endl;
-    arrAnimal[3]->makeSound();
-    arrAnimal[8]->makeSound();
+    if (len > 2)
+    {
+        arrAnimal[len/2 +1]->makeSound();
+        arrAnimal[len/2 -1]->makeSound();
+    }
+    else if (len == 1)
+        arrAnimal[0]->makeSound();
+    else
+    {
+        arrAnimal[0]->makeSound();
+        arrAnimal[1]->makeSound();
+    }
     std::cout << "------------------------------------------" << std::endl;
     for (int i = len - 1; i >= 0; i--)
         delete arrAnimal[i];
