@@ -1,7 +1,11 @@
 NAME	= program
 
 SRC		=	main.cpp\
-			AMateria.cpp
+			AMateria.cpp\
+			Character.cpp\
+			Cure.cpp\
+			Ice.cpp\
+			MateriaSource.cpp
 
 
 OBJ		= $(SRC:.cpp=.o)
