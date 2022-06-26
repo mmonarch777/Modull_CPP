@@ -4,6 +4,11 @@ Animal::Animal()
 {
     std::cout << "Animal default constructor is called." << std::endl;
 }
+Animal::Animal(std::string type)
+{
+    this->type = type;
+    std::cout << "Animal constructor with params is called." << std::endl;
+}
 Animal::Animal(const Animal & other)
 {
     *this = other;

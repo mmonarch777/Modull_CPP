@@ -7,7 +7,7 @@ WrongCat::WrongCat()
 }
 WrongCat::WrongCat(std::string type)
 {
-    (void )type;
+    this->type = type;
     std::cout << "WrongCat constructor with params is called." << std::endl;
 }
 WrongCat::WrongCat(const WrongCat & other)

@@ -7,7 +7,7 @@ Cat::Cat()
 }
 Cat::Cat(std::string type)
 {
-    (void )type;
+    this->type = type;
     std::cout << "Cat constructor with params is called." << std::endl;
 }
 Cat::Cat(const Cat & other)

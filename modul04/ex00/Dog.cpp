@@ -7,7 +7,7 @@ Dog::Dog()
 }
 Dog::Dog(std::string type)
 {
-    (void )type;
+    this->type = type;
     std::cout << "Dog constructor with params is called." << std::endl;
 }
 Dog::Dog(const Dog & other)
