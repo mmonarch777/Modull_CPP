@@ -19,6 +19,11 @@ public:
     AMateria * clone()const;
 
     void use(ICharacter & target);
+    std::string changeType(void )
+    {
+        type = "hell";
+        return type;
+    }
 
 };
 
