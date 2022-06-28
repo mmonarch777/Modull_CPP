@@ -4,7 +4,45 @@
 
 class Bureaucrat
 {
+private:
+
+    std::string const name;
+    int     grade;
+
+public:
+
+    Bureaucrat();
+    Bureaucrat(std::string const name, int grade);
+    Bureaucrat(const Bureaucrat & other);
+    Bureaucrat & operator=(const Bureaucrat & other);
+    ~Bureaucrat();
+
+    std::string getName() const;
+    int getGrade() const;
+    void incrementGrade();
+    void decrementGrade();
+
+    class GradeTooHightException : public std::exception
+    {
+    public:
+
+        GradeTooHightException();
+        ~GradeTooHightException() throw();
+
+        std::string message() const throw();
+    };
+    class GradeTooLowException : public std::exception
+    {
+    public:
+
+        GradeTooLowException();
+        ~GradeTooLowException() throw();
+
+        std::string message() const throw();
+    };
 
 };
+
+std::ostream & operator<<(std::ostream & out, const Bureaucrat & other);
 
 #endif

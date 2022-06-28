@@ -1,7 +1,7 @@
 NAME	= program
 
 SRC		=	main.cpp\
-#			Bureaucrat.cpp
+			Bureaucrat.cpp
 
 OBJ		= $(SRC:.cpp=.o)
 
