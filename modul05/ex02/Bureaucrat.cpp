@@ -99,3 +99,20 @@ void Bureaucrat::signForm(Form & other)
         std::cout << "Don't signed. " << this->name << " bureaucrat grade very low " << std::endl;
     }
 }
+
+void Bureaucrat::executeForm(Form & other)
+{
+    try
+    {
+        other.execute(*this);
+        std::cout << this->name << " executed " << other.getName() << std::endl;
+    }
+    catch (const char * buf)
+    {
+        std::cout << buf << std::endl;
+    }
+    catch (Form::GradeTooLowException & other)
+    {
+        std::cout << "Don't execute. " << this->name << " bureaucrat grade very low." << std::endl;
+    }
+}
