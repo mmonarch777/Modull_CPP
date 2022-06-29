@@ -11,18 +11,18 @@ Intern::~Intern()
 Form * Intern::makeForm(std::string name, std::string target)
 {
     Form *create_form;
-    int number = -1;
+    int i;
     std::string arr[3] = {"Presidential", "Robotomy", "Shrubbery"};
 
-    for (int i = 0; i < 3; i++)
+    for (i = 0; i < 3; i++)
     {
         if (arr[i] == name)
         {
-            number = i;
             std::cout << "Intern creates " << name << " Form" << std::endl;
+            break;
         }
     }
-    switch (number)
+    switch (i)
     {
         case 0:
             create_form = new PresidentialPardonForm(target);
@@ -34,9 +34,7 @@ Form * Intern::makeForm(std::string name, std::string target)
             create_form = new ShrubberyCreationForm(target);
             break;
         default:
-            create_form = NULL;
-            std::cout << "Intern can't creates " << name << std::endl;
-            break;
+            throw ("Intern don't creates Form " + name);
     }
     return create_form;
 }

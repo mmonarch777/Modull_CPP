@@ -64,7 +64,6 @@ int	main()
 //    Bureaucrat mikle("Mikle", 1);
     std::cout << "------------------------------------------" << std::endl;
     std::cout << "PROGRAM FINISH!" << std::endl;
-    fflush(stdout);
     while(1)
         ;
     return (0);
