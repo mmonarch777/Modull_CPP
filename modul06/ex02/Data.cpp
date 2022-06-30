@@ -23,14 +23,37 @@ void identify(Base *p)
         std::cout << RED << "I'm dead..." << DEFAULT << std::endl;
 }
 
-void identify(Base &p)
+//void identify(Base &p)
+//{
+//    if (dynamic_cast<A *>(&p) != nullptr)
+//        std::cout << GREEN << "Class A" << DEFAULT << std::endl;
+//    else if (dynamic_cast<B *>(&p) != nullptr)
+//        std::cout << GREEN << "Class B" << DEFAULT << std::endl;
+//    else if (dynamic_cast<C *>(&p) != nullptr)
+//        std::cout << GREEN << "Class C" << DEFAULT << std::endl;
+//    else
+//        std::cout << RED << "I'm dead..." << DEFAULT << std::endl;
+//}
+
+void	identify(Base &p)
 {
-    if (dynamic_cast<A *>(&p) != nullptr)
+    if ((char *) &p == NULL)
+        return;
+    try
+    {
+        (void) dynamic_cast<A &>(p);
         std::cout << GREEN << "Class A" << DEFAULT << std::endl;
-    else if (dynamic_cast<B *>(&p) != nullptr)
+    }
+    catch (std::bad_cast) {}
+    try
+    {
+        (void) dynamic_cast<B &>(p);
         std::cout << GREEN << "Class B" << DEFAULT << std::endl;
-    else if (dynamic_cast<C *>(&p) != nullptr)
+    }
+    catch (std::bad_cast) {}
+    try
+    {
+        (void) dynamic_cast<C &>(p);
         std::cout << GREEN << "Class C" << DEFAULT << std::endl;
-    else
-        std::cout << RED << "I'm dead..." << DEFAULT << std::endl;
+    } catch (std::bad_cast) {}
 }

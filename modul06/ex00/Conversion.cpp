@@ -75,7 +75,7 @@ void Conversion::literal_double(std::string line)
     {
         const char *buf = line.data();
         doublE = std::strtod(buf, 0);
-        print_double(doublE);
+        print_double(doublE, line);
     }
     catch (std::exception & other)
     {
@@ -115,7 +115,7 @@ bool Conversion::print_float(float f)
         std::cout << CYAN << "char: \t" << YELLOW << "Non displayable" << DEFAULT << std::endl;
     else
         std::cout << CYAN << "char: \t" << RED << "impossible" << DEFAULT << std::endl;
-    if (static_cast<long int>(f) > INT_MAX || static_cast<long int>(f) <= INT_MIN)
+    if (static_cast<long int>(f) > INT_MAX || static_cast<long int>(f) < INT_MIN)
         std::cout << CYAN << "int: \t" << RED << "impossible" << DEFAULT << std::endl;
     else
         std::cout << CYAN << "int: \t" << GREEN << static_cast<int>(f) << DEFAULT << std::endl;
@@ -124,7 +124,7 @@ bool Conversion::print_float(float f)
     std::cout << CYAN << "double: " << GREEN << static_cast<double>(f) << DEFAULT << std::endl;
     return true;
 }
-void Conversion::print_double(double d)
+void Conversion::print_double(double d, std::string line)
 {
     if (std::isprint((int)d))
         std::cout << CYAN << "char: \t" << GREEN << static_cast<char>(d) << DEFAULT << std::endl;
@@ -132,7 +132,9 @@ void Conversion::print_double(double d)
         std::cout << CYAN << "char: \t" << YELLOW << "Non displayable" << DEFAULT << std::endl;
     else
         std::cout << CYAN << "char: \t" << RED << "impossible" << DEFAULT << std::endl;
-    if (d > INT_MAX || d < INT_MIN)
+    if (static_cast<long int>(d) > INT_MAX || static_cast<long int>(d) < INT_MIN)
+        std::cout << CYAN << "int: \t" << RED << "impossible" << DEFAULT << std::endl;
+    else if (line == "nan")
         std::cout << CYAN << "int: \t" << RED << "impossible" << DEFAULT << std::endl;
     else
         std::cout << CYAN << "int: \t" << GREEN << static_cast<int>(d) << DEFAULT << std::endl;

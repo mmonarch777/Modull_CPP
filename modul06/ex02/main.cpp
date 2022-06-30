@@ -10,10 +10,10 @@ int main()
     identify(*p);
     delete p;
     std::cout << BLUE << "---Actual type by LINK---" << DEFAULT << std::endl;
-    Base *pt = generate();
+    Base &pt = *generate();
     identify(pt);
     std::cout << BLUE << "---Actual type by EMPTY POINTER---" << DEFAULT << std::endl;
     identify(x);
-    delete pt;
+    delete &pt;
     return 0;
 }

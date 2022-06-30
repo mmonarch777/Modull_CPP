@@ -43,7 +43,7 @@ public:
     bool print_char(char c);
     bool print_int(int i);
     bool print_float(float f);
-    void print_double(double d);
+    void print_double(double d, std::string line);
 
 };
 #endif
