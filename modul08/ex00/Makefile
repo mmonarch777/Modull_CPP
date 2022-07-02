@@ -4,7 +4,7 @@ SRC		=	main.cpp
 
 OBJ		= $(SRC:.cpp=.o)
 
-HEADR	=	Span.hpp
+HEADR	=	easyfind.hpp
 
 CC		= c++
 
